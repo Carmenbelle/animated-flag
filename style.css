@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    /* background: #053a3d; */
+}
+
+.container {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    display: flex;
+}
+
+.pole {
+    width: 10px;
+    height: 500px;
+    background: #393a3a;
+    border-radius: -5px 0 3px inset rgba(255, 255, 255, 0.3);
+    box-shadow: -5px 0 3px inset rgba(255, 255, 255, 0.3);
+}
+
+
+
+.flag-unit {
+    width: 5px;
+    height: 5px;
+    background: rgb(16, 119, 40);
+    /* background-image: url(./flag.jpg); */
+    animation: vertical 1s infinite;
+}
+
+#pole, .col {
+    transform-origin: bottom;
+    animation: sway 5s infinite;
+}
+
+#flag {
+    display: flex;
+}
+
+  
+  @keyframes vertical {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(calc(var(--displacement)*-1), calc(var(--displacement)*-1));
+    }
+    75% {
+        transform: translate(calc(var(--displacement)*-1), calc(var(--displacement)*4));
+      }
+  } 
+
+  @keyframes sway {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(-3deg);
+    }
+  }
